@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 import rospy
+import json
 import std_msgs.msg
-from language_understanding.srv import *
+from planning_msgs.srv import *
 import time
 from pyrobotics import BB
 from pyrobotics.parallel_senders import ParallelSender
@@ -447,10 +448,15 @@ sentences = [
 def process_string(request):
 	#get the recognized string and send it to the reco function
 	interpreted_command = egprs_interpreter.interpret_command(request.sentence)
+	#convert the interpretation json-format to lists 
+	jsonCFR = json.loads(interpreted_command)
+
 	#send the response back
-	response = parse_sentenceResponse()
-	response.conceptual_dependency = interpreted_command
-	
+	response = parse_sentence_cfrResponse()
+	response.cfr.command = jsonCFR["action"]
+	for key in jsonCFR["params"].keys():
+		response.cfr.frame_id.append(key)
+		response.cfr.frame_value.append(jsonCFR["params"][key])
 	return response
 
 def main():
@@ -469,7 +475,7 @@ def main():
 	#print "Total interpreted: ", count
 
 	#advertise a service to parsing
-	rospy.Service('language_understanding/parse_sentence', parse_sentence, process_string)
+	rospy.Service('language_understanding/parse_sentence', parse_sentence_cfr, process_string)
 
 	rospy.spin()
 
