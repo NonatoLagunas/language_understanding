@@ -150,4 +150,6 @@
 (own			tag			vrb)
 (owns			tag			vrb)
 (deliver		tag			vrb)
+(start		tag			vrb)
+(stop		tag			vrb)
 

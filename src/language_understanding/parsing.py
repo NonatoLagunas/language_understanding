@@ -164,7 +164,7 @@ def ontology_words_mapping(sentence):
 	#sentence = re.sub(' me ', ' speaker ', sentence)
 	sentence = re.sub('\?', ' ?', sentence)
 	sentence = re.sub('pick up ', 'take ', sentence)
-	sentence = re.sub('robot ', ' ', sentence)
+	sentence = re.sub('robot ', '', sentence)
 
 
 	sentence = re.sub('  ', ' ', sentence)

@@ -28,6 +28,7 @@ whActionFind = ["search_for", "find","look_for", "search","searches_for", "look_
 itemPlace = ["item", "place"]
 whGround = ["in", "near", "on", "into", "at"]
 whActionTake = ["take", "takes", "grasp", "grasps", "grab", "remove", "removes", "pick", "get", "pick_up", "lift"]
+whActionSwitch = ["start", "stop"]
 whActionDrop = ["drop", "drops",  "place", "put", "release", "releases", "deliver", "let"]
 whSourceFrom = ["in", "from", "on", "in_from_ of", "right_of", "left_of", "into", "at", "upon", "above" ]
 whGoalPlacing = ["in", "to", "on", "at", "into", "for", "right_of", "left_of", "keep"]
@@ -36,6 +37,17 @@ whActionBring = ["bring", "get", "fetch", "carry", "brings", "bring_up", "give",
 meaning_mapping_patterns = [
 
 	# patrones para rocKIn 2014
+
+	############################################# SWITCH
+	# SWITCH ACTION
+	{"params": ["what_switch", "what_action"],
+	"what_switch": [whActionSwitch, ["vrb"], [], []],
+	"what_action": [whActionGo, ["noun"], [], []],
+	"conceptual_dependency": '{"action":"SWITCH", "params":{"value":"-what_switch-", "action":"-what_action-"}}',
+	"verbal_confirmation": '',
+	"planner_confirmed": '',
+	"planner_not_confirmed": ''},
+
 	############################################# CONFIRMATION
 
 	# MOVE to PLACE|PERSON|ITEM
