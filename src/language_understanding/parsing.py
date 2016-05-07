@@ -223,7 +223,7 @@ def ontology_words_mapping(sentence):
 	sentence = re.sub("next to the", "next_to", sentence)
 
 	sentence = re.sub("bottle of", "bottle", sentence)
-	sentence = re.sub("follow me", "follow_me", sentence)
+	#sentence = re.sub("follow me", "follow_me", sentence)
 
 	sentence = re.sub("at corner", "at_corner", sentence)
 	sentence = re.sub("at corner of", "at_corner_of", sentence)

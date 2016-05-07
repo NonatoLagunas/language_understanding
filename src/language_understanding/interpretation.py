@@ -22,7 +22,7 @@ def intersection(a,b):
 # 
 
 ###variables
-whActionGo = ["go", "move", "enter", "leave", "pass", "travel", "go_out", "walk", "walks", "navigate", "navigates", "reach", "get", "get_into", "enter", "come", "drive", "follow_me"]
+whActionGo = ["go", "move", "enter", "leave", "pass", "travel", "go_out", "walk", "walks", "navigate", "navigates", "reach", "get", "get_into", "enter", "come", "drive", "follow_me", "follow", "following"]
 whGoalMotion = ["to", "over", "near", "into"]
 whActionFind = ["search_for", "find","look_for", "search","searches_for", "look_at", "seek", "pick_over", "point", "recognize", "examine", "finds", "watch", "check", "see"]
 itemPlace = ["item", "place"]
@@ -56,11 +56,11 @@ meaning_mapping_patterns = [
 	"planner_confirmed": '',
 	"planner_not_confirmed": ''},
 
-	# MOVE on DIRECTION to PLACE
+	# MOVE on DIRECTION to PLACE|PERSON
 	{"params": ["what_action","what_path", "what_goal"],
 	"what_action": [whActionGo, ["vrb"], [], []],
 	"what_path": [[], ["noun"], ["relpath"], []],
-	"what_goal": [[], ["noun", "prep_phrase"], ["place"], []],
+	"what_goal": [[], ["noun", "prep_phrase"], ["place", "person"], []],
 	#"conceptual_dependency": "MOTION(goal:'-what_goal-', path:'-what_path-')",
 	"conceptual_dependency": '{"action":"MOTION", "params":{"goal":"-what_goal-", "path":"-what_path-"}}',
 	"verbal_confirmation": '',
