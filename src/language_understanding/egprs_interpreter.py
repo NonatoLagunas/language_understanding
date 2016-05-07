@@ -14,10 +14,10 @@ from pyrobotics.messages import Command
 def interpret_command(sentence_string):
 	G = kb_services.load_semantic_network()
 	grounded_commands = interpretation.sentence_grounder(G, sentence_string)
-	print "grounded command: ", grounded_commands
+	#print "grounded command: ", grounded_commands
 	for each_command in grounded_commands:
 		expression = interpretation.generate_dependency(G, each_command)
-		print "generated expression to planner: ", expression
+		#print "generated expression to planner: ", expression
 #	sentences  = interpretation.break_sentence(sentence_string)
 #	print "hi: ", sentences
 #	for command in sentences[0:1]:
