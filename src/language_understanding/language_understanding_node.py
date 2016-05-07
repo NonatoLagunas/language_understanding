@@ -475,7 +475,7 @@ def main():
 	#print "Total interpreted: ", count
 
 	#advertise a service to parsing
-	rospy.Service('language_understanding/parse_sentence', parse_sentence_cfr, process_string)
+	rospy.Service('language_understanding/parse_sentence_cfr', parse_sentence_cfr, process_string)
 
 	rospy.spin()
 
