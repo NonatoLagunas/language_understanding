@@ -197,7 +197,7 @@
 #trayectorias relativas
 (along	is_kind_of	relpath)
 (around	is_kind_of	relpath)
-(follow	is_kind_of	relpath)
+#(follow	is_kind_of	relpath)
 (following	is_kind_of	relpath)
 (towards	is_kind_of	relpath)
 (straight	is_kind_of	relpath)

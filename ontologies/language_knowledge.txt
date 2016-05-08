@@ -56,6 +56,8 @@
 (pass			tag			vrb)
 (travel			tag			vrb)
 (moves			tag			vrb)
+(follow			tag			vrb)
+(following			tag			vrb)
 (go				tag			vrb)
 (goes			tag			vrb)
 (take			tag			vrb)
