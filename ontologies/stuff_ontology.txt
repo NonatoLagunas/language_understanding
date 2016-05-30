@@ -387,6 +387,7 @@
 (yes 			is_kind_of 		confirmation)
 
 (orange_juice 			is_kind_of 		item)
+(name 			is_kind_of 		item)
 #(beer 			is_kind_of 		item)
 #(fruit 			is_kind_of 		item)
 #(apple 			is_kind_of 		item)

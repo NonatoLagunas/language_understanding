@@ -38,6 +38,17 @@ meaning_mapping_patterns = [
 
 	# patrones para rocKIn 2014
 
+	############################################# INFO
+    # pertenency: my name is OBJ, her name is OBJ, john drink is OBJ, etc
+	{"params": ["what_pro", "what_theme", "what_value"],
+	"what_pro": [["my", "his", "her"], ["pro"], [], []],
+	"what_theme": [[], ["noun"], ["item"], []],
+	"what_value": [[], ["noun", "prep_phrase", "adj"], ['person', "attribute"], []],
+    "conceptual_dependency": '{"action":"MEMBERSHIP", "params":{"pronoun":"-what_pro-", "theme":"-what_theme-", "value":"-what_value-"}}',
+	"verbal_confirmation": '',
+	"planner_confirmed": '',
+	"planner_not_confirmed": ''},
+
 	############################################# SWITCH
 	# SWITCH ACTION GOAL
 	{"params": ["what_switch", "what_action", "what_goal"],
@@ -52,7 +63,7 @@ meaning_mapping_patterns = [
 	# SWITCH ACTION GOAL
 	{"params": ["what_switch",  "what_action", "what_goal"],
 	"what_switch": [whActionSwitch, ["vrb"], [], []],
-	"what_action": [["follow", "following"], ["vrb"], [], []],
+	"what_action": [["follow", "following", "guide", "guiding"], ["vrb"], [], []],
 	#"preploc": [", ["vrb", "noun", "prep_phrase"], [], []],
 	"what_goal": [[], ["noun", "prep_phrase"], ["place", 'person', 'item'], []],
     "conceptual_dependency": '{"action":"SWITCH", "params":{"value":"-what_switch-", "action":"-what_action-", "goal":"-what_goal-"}}',

@@ -3,6 +3,7 @@ import rospy
 import json
 import std_msgs.msg
 from planning_msgs.srv import *
+from planning_msgs.msg import *
 import time
 from pyrobotics import BB
 from pyrobotics.parallel_senders import ParallelSender
@@ -19,8 +20,8 @@ def process_string(request):
 	response = parse_sentence_cfrResponse()
 	response.cfr.command = jsonCFR["action"]
 	for key in jsonCFR["params"].keys():
-		response.cfr.frame_id.append(key)
-		response.cfr.frame_value.append(jsonCFR["params"][key])
+		response.cfr.params.append(CFRParams(key, jsonCFR["params"][key]))
+		#response.cfr.params.frame_value.append(jsonCFR["params"][key])
 	return response
 
 def main():
